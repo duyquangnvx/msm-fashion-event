@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MSM - Fashion</title>
+        <script >
+            function changedStyleImage() {
+                let inputVal = document.getElementById("styleName").value;               
+                document.getElementById("styleImg").src = 'Images/' + inputVal + '.jpg';          
+            }
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <datalist id="list-style"></datalist>
+            <script>
+                let styles = ["Aran", "Aromatic Spring", "Bing Cherry", "Black Scout", "Bloody Rose",
+                    "Bluebird", "Death's Scythe", "Diamond Brilliance", "Evan", "Fancy Feather Quill",
+                    "Flowers in the Snow Wedding", "Fluttering Heart", "Glowy Butterfly", "Golden Lullaby",
+                    "Green Thumb", "Ice Summer", "January", "Janus", "Lachelein Fantasia", "Luminous", "Maid",
+                    "Mercedes", "Mint Kitty Romance", "Snow", "Phantom", "Pony", "Pumpkin Star", "Rose Angel",
+                    "Rose Constellation", "Shade", "Snow Bunny", "Starlight Lantern", "Strawberry Bon Bon", "Sunday Picnic", "Sweetly Chic",
+                    "Trendy Spring", "Winter Deer", "Queen's Ice Cream", "Romantic Traveler"];
+                let list = document.getElementById("list-style");
+
+                styles.forEach((item) => {
+                    let option = document.createElement("option");
+                    option.value = item;
+                    list.appendChild(option);
+                });
+            </script>
+            <input id="styleName" autoComplete="on" list="list-style" onClick="this.setSelectionRange(0, this.value.length)" onchange="changedStyleImage()"/> 
+
+        </div>
+        <div>
+            <img id="styleImg" src="Images/Aran.jpg" alt="Style Image">
+        </div>
+    </body>
+</html>
